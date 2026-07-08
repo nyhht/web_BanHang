@@ -1,10 +1,9 @@
 {
     "version": 2,
-    "framework": null,
     "builds": [
         {
             "src": "public/index.php",
-            "use": "@vercel/php"
+            "use": "vercel-php@8.2"
         },
         {
             "src": "public/**",
@@ -20,14 +19,5 @@
             "src": "/(.*)",
             "dest": "public/index.php"
         }
-    ],
-    "env": {
-        "APP_ENV": "production",
-        "APP_DEBUG": "false",
-        "APP_URL": "https://your-project.vercel.app",
-        "LOG_CHANNEL": "stderr",
-        "VIEW_COMPILED_PATH": "/tmp",
-        "SESSION_DRIVER": "cookie",
-        "CACHE_STORE": "array"
-    }
+    ]
 }
