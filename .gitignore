@@ -1,0 +1,44 @@
+# --- Laravel Core (Quét mọi thư mục con) ---
+**/vendor/
+**/node_modules/
+**/.env
+**/.env.backup
+**/.env.production
+**/public/build/
+**/public/hot/
+**/public/storage/
+**/storage/*.key
+**/storage/pail/
+
+# --- Laravel Storage Logs & Cache (Bổ sung) ---
+**/storage/logs/*.log
+**/storage/framework/cache/data/
+**/storage/framework/sessions/
+**/storage/framework/testing/
+**/storage/framework/views/
+
+# --- Testing & Caches ---
+**/.phpunit.cache/
+**/.phpunit.result.cache
+**/npm-debug.log
+**/yarn-error.log
+**/.vite-inspect
+
+# --- IDEs & Editors Configuration ---
+**/.vscode/
+**/.idea/
+**/.fleet/
+**/.nova/
+**/.zed/
+**/.phpactor.json
+
+# --- Environment Packages & Miscellaneous ---
+**/Homestead.json
+**/Homestead.yaml
+**/auth.json
+**/*.sql
+
+# --- OS Files (Bổ sung) ---
+.DS_Store
+Thumbs.db
+desktop.ini

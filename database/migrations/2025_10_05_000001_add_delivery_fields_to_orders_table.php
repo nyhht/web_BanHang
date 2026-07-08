@@ -1,0 +1,25 @@
+﻿<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::table('orders', function (Blueprint $table) {
+            $table->foreignId('delivery_staff_id')->nullable()->after('user_id')->constrained('users')->nullOnDelete();
+            $table->timestamp('dispatched_at')->nullable()->after('status');
+            $table->timestamp('delivered_at')->nullable()->after('dispatched_at');
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('orders', function (Blueprint $table) {
+            $table->dropForeign(['delivery_staff_id']);
+            $table->dropColumn(['delivery_staff_id', 'dispatched_at', 'delivered_at']);
+        });
+    }
+};

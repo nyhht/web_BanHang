@@ -1,0 +1,178 @@
+.disabled-panel {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+#category-image, #product-images, .product-images {
+    display: none;
+}
+
+.image-preview {
+    margin-top: 10px;
+    max-width: 200px;
+    max-height: 200px;
+    border: 2px solid #007bff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.image-category, .image-product {
+    width: 80px;
+    height: 80px;
+}
+
+.btn-update-category , .btn-update-product{
+    color: green !important;
+}
+
+.btn-delete-category, .btn-delete-product {
+    color: red !important;
+}
+
+.category-image{
+    display: none;
+}
+
+.image-preview-listproduct {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.custom-badge{
+    padding: 10px 5px;
+}
+
+.delivery-history-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 0;
+}
+
+.delivery-history-list li {
+    border-left: 3px solid #26b99a;
+    padding: 0 0 14px 14px;
+    margin-bottom: 12px;
+}
+
+.delivery-history-time {
+    color: #6c757d;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.delivery-history-note {
+    color: #555;
+    margin-top: 6px;
+}
+
+.img-account{
+    width: 220px;
+    height: 220px;
+}
+
+.custom-message-top{
+    display: -webkit-box; 
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    word-break: break-word;
+    white-space: unset !important;
+}
+
+.coupon-product-picker {
+    margin-bottom: 8px;
+}
+
+.coupon-product-picker-tools {
+    display: grid;
+    grid-template-columns: minmax(180px, 240px) minmax(220px, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.coupon-product-picker-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.coupon-product-picker-actions .btn {
+    margin-bottom: 0;
+}
+
+.coupon-product-picker-actions .js-coupon-products-count {
+    margin-left: 4px;
+    line-height: 30px;
+}
+
+.js-coupon-products-select optgroup {
+    color: #2a3f54;
+    font-weight: 700;
+}
+
+.js-coupon-products-select option {
+    color: #333;
+    font-weight: 400;
+}
+
+.item.form-group:has(textarea[name="legacy_ingredients"]),
+.item.form-group:has(textarea[name="legacy_cooking_instructions"]) {
+    display: none;
+}
+
+.meal-kit-repeatable-row {
+    display: grid;
+    grid-template-columns: minmax(160px, 1.5fr) minmax(100px, 0.7fr) minmax(90px, 0.7fr) auto;
+    gap: 8px;
+    align-items: start;
+    margin-bottom: 8px;
+}
+
+.meal-kit-step-row {
+    grid-template-columns: 34px minmax(240px, 1fr) auto;
+}
+
+.meal-kit-step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #26b99a;
+    color: #fff;
+    font-weight: 700;
+}
+
+@media (max-width: 767px) {
+    .coupon-product-picker-tools {
+        grid-template-columns: 1fr;
+    }
+
+    .meal-kit-repeatable-row,
+    .meal-kit-step-row {
+        grid-template-columns: 1fr;
+    }
+}
