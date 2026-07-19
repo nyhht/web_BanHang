@@ -1,15 +1,23 @@
 <?php
 
-// 1. Ép Laravel lưu file cấu hình và giao diện tạm vào thư mục /tmp của Vercel
-$storagePath = '/tmp/storage/framework';
-foreach (['/meta', '/sessions', '/views', '/cache/data'] as $dir) {
-    if (!is_dir($storagePath . $dir)) {
-        mkdir($storagePath . $dir, 0755, true);
+// 1. Tự động khởi tạo cấu trúc thư mục tạm bắt buộc cho Laravel trên Vercel
+$storageStructures = [
+    '/tmp/storage/app/public',
+    '/tmp/storage/framework/cache/data',
+    '/tmp/storage/framework/sessions',
+    '/tmp/storage/framework/views',
+    '/tmp/storage/bootstrap/cache'
+];
+
+foreach ($storageStructures as $dir) {
+    if (!is_dir($dir)) {
+        mkdir($dir, 0755, true);
     }
 }
 
-putenv("VIEW_COMPILED_PATH=/tmp/storage/framework/views");
-putenv("APP_CONFIG_CACHE=/tmp/storage/framework/cache/config.php");
+// 2. Định nghĩa các biến môi trường để Laravel ghi cache/views vào thư mục /tmp (được cấp quyền ghi)
+putenv('APP_STORAGE=/tmp/storage');
+putenv('VIEW_COMPILED_PATH=/tmp/storage/framework/views');
 
-// 2. Gọi lõi Laravel chạy bình thường
+// 3. Gọi file bootstrap chính xác bằng đường dẫn tuyệt đối __DIR__
 require __DIR__ . '/../public/index.php';
